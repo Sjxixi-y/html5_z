@@ -1,0 +1,132 @@
+/* 总布局 */
+body {
+    margin: 0px
+}
+
+/* a标签未点击状态 */
+a:link {
+    color: #bbb;
+    text-decoration: none;
+}
+
+/* a标签被访问后的状态  */
+a:visited {
+    color: black;
+
+}
+
+/* 图片 */
+.tp1 {
+    width: 100%
+}
+
+.tp2 {
+    height: 45px;
+    width: 45px;
+}
+
+/* A区 */
+.da {
+    width: 24.8%;
+    float: left;
+}
+
+/* B区 */
+.db {
+    width: 75.2%;
+    float: left;
+}
+
+/* 顶部区域 */
+.db1 {
+    width: 100%;
+    height: 20%;
+    float: left;
+    padding: 20px;
+}
+
+/* logo区 */
+.db11 {
+    float: left;
+    margin-right: 10px;
+}
+
+/* 文字 */
+.db12 {
+    float: left;
+    font-size: 25px;
+    margin-top: 5px
+}
+
+/* 菜单区域 */
+.db13 {
+    float: right;
+}
+
+/* 3选项 */
+.db13A {
+    float: left;
+    margin-top: 10px
+}
+
+/* 选项字体 */
+.db13A1 {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #bbb;
+}
+
+/* 下拉链接 */
+.dropdown {
+    float: right;
+    width: 26%;
+    margin-top: 5px
+}
+
+/* 注册区 */
+.db2 {
+    width: 95%;
+    height: 75%;
+    float: left;
+    margin-top: 20px
+}
+
+/* 留白 */
+.db21 {
+    float: left;
+    border: 1px hidden white;
+    width: 33%;
+    height: 1000px
+}
+
+.db23 {
+    float: right;
+    border: 1px hidden white;
+    width: 33%;
+    height: 1000px
+}
+
+/* 登录注册区 */
+.db22A {
+    width: 100%;
+}
+
+/* 表单地区 */
+.db22B1 {
+    /* width: 20px; */
+}
+
+.db22B2 {
+    width: 10%;
+}
+
+.db22B5 {
+    color: #bbb;
+}
+
+/* 验证码按钮 */
+.db22B6 {
+    border: none;
+    background-color: #000000;
+}
