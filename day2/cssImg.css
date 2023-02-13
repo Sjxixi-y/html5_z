@@ -1,0 +1,21 @@
+img {
+    width: 100%;
+}
+
+.d3 {
+    width: 15.5%;
+    float: left;
+}
+
+.d4 {
+    width: 45%;
+    margin-top: 0.5%;
+    margin-left: 5%;
+    float: left;
+}
+
+.d5 {
+    width: 17%;
+    margin-left: 10%;
+    float: left;
+}

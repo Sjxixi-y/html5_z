@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+
+        // var i = 1;
+        // var a;
+
+        // for (; ; i++) {
+        //     a = Math.floor(Math.random() * 1000 + 1);
+        //     if (888 == a) {
+        //         document.writeln(i);
+        //         break;
+        //     }
+        // }
+        // 九九乘法表
+        // for (var i = 1; i <= 9; i++) {
+        //     for (var j = 1; j <= i; j++) {
+        //         if (i == j) {
+        //             document.writeln(j + "*" + i + "=" + (i * j) + "<br>")
+        //         } else {
+        //             document.writeln(j + "*" + i + "=" + (i * j) + "&nbsp" + "&nbsp")
+        //         }
+        //     }
+        // }
+
+        // 有限5位数，个位数为6且能被3整除的五位数共有多少个？
+        function demo01() {
+            var a = 0;
+            for (var i = 10000; i < 100000; ++i) {
+                if (i % 10 == 6 && i % 3 == 0) {
+                    a++;
+                }
+            }
+            document.writeln(a);
+        }
+        // demo01();
+
+        // 4位反序数，假设N是一个四位数，它的9倍恰好是其反序数，求N。反序数就是将整数的数字倒过来的形成的整数。（1089*9=9801）
+        function demo02() {
+            for (var i = 1000; i < 10000; ++i) {
+                // 获取个位、十位、百位、千位
+                var a = i % 10;
+                var b = (i - a) % 100 / 10;
+                var c = (i - (b * 10 + a)) % 1000 / 100;
+                var d = (i - (c * 100 + b * 10 + a)) / 1000;
+                // 判断
+                if (i * 9 == (a * 1000 + b * 100 + c * 10 + d)) {
+                    document.writeln(i + "<br>");
+                }
+            }
+        }
+
+        // demo02();
+
+        // 完全数：如果一个数恰好等于他的因子之和，则成为“完全数”。如：6的因子是1、2、3，
+        // 而6=1+2+3，则6是个“完全数”。试求出1000以内的全部“完全数”。
+        function demo03() {
+            for (var i = 1; i < 1000; ++i) {
+                var a = 0;
+                for (var j = 1; j < i; ++j) {
+                    if (i % j == 0) {
+                        a += j;
+                    }
+                }
+                if (i == a) {
+                    document.writeln(i + "<br>");
+                }
+            }
+        }
+
+        // demo03();
+
+        // 和的平方数3025这个数具有一种独特的性质：将它平分为两段，即30和25，
+        // 使之相加后求平方，即(30 + 25)的平方等于3025本身。求具有这样性质的全部四位数。
+        // 这些数字满足 abcd = (ab + cd) * (ab + cd)的关系。
+        function demo04() {
+            for (var i = 1000; i < 10000; ++i) {
+                // 获取个、十、百、千
+                var a = i % 10;
+                var b = (i - a) % 100 / 10;
+                var c = (i - (b * 10 + a)) % 1000 / 100;
+                var d = (i - (c * 100 + b * 10 + a)) / 1000;
+                // 判断
+                if (i == ((d * 10 + c + b * 10 + a) * (d * 10 + c + b * 10 + a))) {
+                    document.writeln(i + "<br>");
+                }
+            }
+        }
+
+        // demo04();
+        function demo04a() {
+
+            var a, b, c, x, y, m, n;
+            for (var a = 10; a <= 99; a++) {
+                // 百位
+                y = a % 10;
+                // 千位
+                x = (a - y) / 10;
+
+                for (var b = 0; b <= 99; b++) {
+                    // 个位
+                    n = b % 10;
+                    // 十位
+                    m = (b - n) / 10;
+
+                    if ((a + b) * (a + b) == x * 1000 + y * 100 + m * 10 + n) {
+                        document.writeln("&nbsp" + x + y + m + n);
+                    }
+                }
+            }
+        }
+        // demo04a();
+
+        // 打印出100-999之间的所有“水仙花数”。所谓“水仙花数”，是指一个3位数，
+        // 其各位数字立方和等于该数本身。例如：153是一个水仙花数。
+        function demo05() {
+            for (var i = 100; i <= 999; i++) {
+                // 获取个、十、百
+                var a = i % 10;
+                var b = (i - a) % 100 / 10;
+                var c = (i - (b * 10 + a)) % 1000 / 100;
+                // 获取判断条件
+                var j = a * a * a + b * b * b + c * c * c;
+                if (i == j) {
+                    document.writeln(i + "<br>");
+                }
+            }
+        }
+
+        // demo05();
+
+        // 学校2009年培养学生900人，每年增长25%，请问按此速度增长，到哪一年培训学生人数将达到1万人
+        function demo06() {
+            var a = 900;
+            for (var i = 2010; ; i++) {
+                // 当年能达到的值，也就是增加值
+                a += a * 0.25;
+
+                if (a >= 10000) {
+                    document.writeln(i + "<br>");
+                    break;
+                }
+            }
+        }
+
+        // demo06();
+
+        // 使用do - while实现：输出摄氏温度与华氏温度的对照表，要求它从摄氏温度0度到250度，
+        // 每隔20度为一项。转换关系：华氏温度 = 摄氏温度 * 9 / 5.0 + 32
+        // 0      32
+        // 20     68
+
+        function demo07() {
+            // 华氏度
+            var HUA_SHI_DU = 0;
+            // 摄氏度
+            var SHE_SHI_DU = 0;
+
+            for (SHE_SHI_DU = 0; SHE_SHI_DU <= 250; SHE_SHI_DU += 20) {
+                HUA_SHI_DU = (SHE_SHI_DU * 9) / 5.0 + 32;
+                document.writeln(SHE_SHI_DU + "&nbsp" + HUA_SHI_DU + "<br>");
+            }
+        }
+
+        // demo07();
+
+        // 求1~100之间不能被3整除的数之和
+        function demo08() {
+            var a = 0;
+            for (let i = 1; i <= 100; i++) {
+                if (i % 3 != 0) {
+                    a += i;
+                }
+            }
+            document.writeln(a + "<br>");
+        }
+
+        // demo08();
+
+        // 1~10之间的整数相加，得到累加值大于20的当前数。
+        function demo10() {
+            var a = 0;
+            for (let i = 1; i <= 10; i++) {
+                a += i;
+                if (a > 20) {
+                    document.writeln(i + "<br>");
+                    break;
+                }
+            }
+        }
+
+        // demo10();
+
+        // 求1~100之间的所有偶数和
+        function demo11() {
+            var a = 0;
+            for (let i = 1; i <= 100; ++i) {
+                if (i % 2 == 0) {
+                    a += i;
+                }
+            }
+
+            document.writeln(a + "<br>");
+        }
+
+        // demo11();
+
+        // 开发一个标题为"FlipFlop"的游戏应用程序。它从1计数到100，遇到3的倍数就替换为单词“Flip”，
+        // 5的倍数就替换为单词“Flop",既为3的倍数又为5的倍数则替换为单词"FlipFlop".
+        function demo12() {
+            for (let i = 1; i <= 100; ++i) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    document.writeln("FlipFlop" + "<br>");
+                } else if (i % 5 == 0) {
+                    document.writeln("Flop" + "<br>");
+                } else if (i % 3 == 0) {
+                    document.writeln("Flip" + "<br>");
+                } else {
+                    document.writeln(i + "<br>");
+                }
+            }
+        }
+
+        // demo12();
+
+        // 山上有一口缸可以装50升水，现在有15升水。老和尚叫小各尚下山挑水，
+        // 每次可以挑5升，问：小和尚要挑几次才可以把缸挑满？
+        function demo13() {
+            var a = 15;
+            for (var i = 0; ; i++) {
+                if (a >= 50) {
+                    document.writeln(i + "<br>");
+                    break;
+                }
+                a += 5;
+            }
+        }
+
+        // demo13();
+
+        // 使用循环输出100, 95, 90, 85……5。
+        function demo14() {
+            for (var i = 100; i >= 5; i -= 5) {
+                document.writeln(i + "<br>");
+            }
+        }
+
+        // demo14();
+
+
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+
+</html>

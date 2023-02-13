@@ -1,0 +1,28 @@
+.d {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.d1 {
+    width: 100%;
+}
+
+.d2 {
+    width: 100%;
+    margin-top: 15px
+}
+
+.d7 {
+    width: 100%;
+}
+
+.d6 td {
+    height: 40px;
+    background-color: #FFC900;
+    text-align: center;
+}
+
+.d8 {
+    margin-top: 10px;
+}

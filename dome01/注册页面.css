@@ -34,6 +34,7 @@ a:visited {
 /* B区 */
 .db {
     width: 75.2%;
+    background-color: #ffffff;
     float: left;
 }
 
@@ -107,6 +108,13 @@ a:visited {
     height: 1000px
 }
 
+.db22 {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    float: left;
+    width: 33%;
+}
+
 /* 登录注册区 */
 .db22A {
     width: 100%;
@@ -130,3 +138,5 @@ a:visited {
     border: none;
     background-color: #000000;
 }
+
+.db22C {}
