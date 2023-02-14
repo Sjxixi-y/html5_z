@@ -137,14 +137,13 @@
         // 学校2009年培养学生900人，每年增长25%，请问按此速度增长，到哪一年培训学生人数将达到1万人
         function demo06() {
             var a = 900;
-            for (var i = 2010; ; i++) {
-                // 当年能达到的值，也就是增加值
-                a += a * 0.25;
-
+            for (var i = 2009; ; i++) {
                 if (a >= 10000) {
                     document.writeln(i + "<br>");
                     break;
                 }
+                // 当年能达到的值，也就是增加值
+                a += a * 0.25;
             }
         }
 
@@ -252,10 +251,142 @@
 
         // demo14();
 
+        // 四个连续的3位自然数的和是一个在400到440之间的三位数，并且能被9整除，这四个自然数分别是多少？
+        function demo15() {
+            for (var a = 100; a < 110; a++) {
+                var b = a + 1;
+                var c = a + 2;
+                var d = a + 3;
+                // 计算4数之和
+                var nmu = a + b + c + d;
+                // 判断
+                if (nmu > 400 && nmu < 440 && nmu % 9 == 0) {
+                    document.writeln(a + "&nbsp" + b + "&nbsp" + c + "&nbsp" + d);
+                }
+            }
+        }
+
+        // demo15();
+
+        function demo16() {
+            var a = 0;
+            for (var i = 1; i <= 10; i++) {
+                a += 1 / i;
+            }
+            document.writeln(a);
+        }
+
+        // demo16();
+
+        // 21、百钱买百鸡 ,公鸡5文钱一只，母鸡3文钱一只，小鸡3只一文钱，用100文钱买一百只鸡,
+        // 其中公鸡，母鸡，小鸡都必须要有，问公鸡，母鸡，小鸡要买多少只刚好凑足100文钱。
+        function demo17() {
+            // 公鸡
+            for (var i = 1; i <= 20; i++) {
+                // 母鸡
+                for (var j = 1; j <= 33; j++) {
+
+                    if (i * 5 + j * 3 + (100 - (i + j)) * (1 / 3) == 100) {
+                        document.writeln("公鸡：" + i + "<br>" + "母鸡：" + j + "<br>" + "小鸡：" + (100 - (i + j)) + "<br><br>");
+                    }
+                }
+            }
+        }
+
+        // demo17();
+
+        // 实现十进制正数转化为二进制数。
+        function demo18() {
+            // 十进制数
+            var SHI_JIN_ZHI = 10;
 
 
+        }
+
+        // 求数组内的最大、最小。
+        function demo19() {
+            var arr = new Array();
+            // 数组长度
+            ARR_LENGTH = 10;
+            // 获取随机数组
+            for (var j = 0; j < ARR_LENGTH; ++j) {
+                // 获取随机数
+                arr[j] = Math.floor(Math.random() * 1000 + 1);
+            }
+
+            // 遍历
+            for (var k = 0; k < ARR_LENGTH; ++k) {
+                if (k == 0) {
+                    document.writeln("[" + arr[k]);
+                } else if (k != ARR_LENGTH - 1) {
+                    document.writeln("," + "&nbsp" + arr[k]);
+                } else {
+                    document.writeln("," + "&nbsp" + arr[k] + "]" + "<br>")
+                }
+            }
+
+            var a = arr[1]; // 最大
+            var b = arr[1]; // 最小
+
+            for (var i = 0; i < arr.length; ++i) {
+                if (a <= arr[i]) {
+                    a = arr[i];
+                }
+                if (b >= arr[i]) {
+                    b = arr[i];
+                }
+            }
+            document.writeln("最大：" + a + "<br>" + "最小：" + b);
+        }
+
+        // demo19();
+
+        // 排序
+        function demo20() {
+            var arr = new Array();
+            // 数组长度
+            ARR_LENGTH = 10;
+            // 获取随机数组
+            for (var j = 0; j < ARR_LENGTH; ++j) {
+                // 获取随机数
+                arr[j] = Math.floor(Math.random() * 1000 + 1);
+            }
+
+            // 遍历
+            for (var k = 0; k < ARR_LENGTH; ++k) {
+                if (k == 0) {
+                    document.writeln("[" + arr[k]);
+                } else if (k != ARR_LENGTH - 1) {
+                    document.writeln("," + "&nbsp" + arr[k]);
+                } else {
+                    document.writeln("," + "&nbsp" + arr[k] + "]" + "<br>")
+                }
+            }
+
+            // 简单8排序
+            for (var i = 0; i < arr.length; i++) {
+                for (var j = i + 1; j < arr.length; j++) {
+                    // 找到最小值
+                    if (arr[i] >= arr[j]) {
+                        var a = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = a;
+                    }
+                }
+            }
+            for (var k = 0; k < ARR_LENGTH; ++k) {
+                if (k == 0) {
+                    document.writeln("[" + arr[k]);
+                } else if (k != ARR_LENGTH - 1) {
+                    document.writeln("," + "&nbsp" + arr[k]);
+                } else {
+                    document.writeln("," + "&nbsp" + arr[k] + "]" + "<br>")
+                }
+            }
+        }
+        demo20();
     </script>
-    <title>Document</title>
+    <title>流程控制基础</title>
 </head>
 
 <body>
