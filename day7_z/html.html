@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>斗地主</title>
+
+    <script src="js.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <!-- 模拟斗地主发牌 -->
+    <script name="viewport">
+        // 获取牌
+        var arr = pai();
+
+        // 展示牌
+        shuChu(arr);
+        // 洗牌
+        arr = daLuan(arr);
+        // 展示洗好的牌
+        shuChu(arr);
+        // 发牌
+        faPai(arr);
+        // 展示发的牌
+        wanQuanPai3();
+    </script>
+</body>
+
+</html>
